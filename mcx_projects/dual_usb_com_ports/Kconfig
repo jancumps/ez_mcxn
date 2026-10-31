@@ -1,0 +1,3 @@
+mainmenu "Dual USB COM Ports"
+
+source "${SdkRootDirPath}/Kconfig.mcuxpresso"
