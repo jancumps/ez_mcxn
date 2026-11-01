@@ -139,8 +139,8 @@ usb_status_t USB_DeviceCallback(usb_device_handle handle, uint32_t event, void *
             }
             break;
         case kUSB_DeviceEventSetInterface:
-            if (*temp8 == 3U)
-                error = NCM_DeviceSetAlt(handle, g_composite.speed, g_interface[3]);
+            if (*temp8 == 1U)
+                error = NCM_DeviceSetAlt(handle, g_composite.speed, g_interface[1]);
             else
                 error = kStatus_USB_Success;
             break;
@@ -288,7 +288,7 @@ usb_status_t USB_DeviceProcessClassRequest(usb_device_handle handle,
                                            uint32_t *length,
                                            uint8_t **buffer)
 {
-    if ((setup->wIndex & 0xFFU) == 2U)
+    if ((setup->wIndex & 0xFFU) == 0U)
         return NCM_DeviceClassRequest(setup, length, buffer);
     return USB_DeviceCdcVcomClassRequest(handle, setup, length, buffer);
 }

@@ -250,7 +250,7 @@ usb_status_t NCM_DeviceConfigure(usb_device_handle handle, uint8_t speed, uint8_
 usb_status_t NCM_DeviceClassRequest(usb_setup_struct_t *setup, uint32_t *length, uint8_t **buffer)
 {
     uint16_t n;
-    if ((setup->wIndex & 0xffU)!=2U || (setup->wIndex >> 8)!=0U) return kStatus_USB_InvalidRequest;
+    if ((setup->wIndex & 0xffU)!=0U || (setup->wIndex >> 8)!=0U) return kStatus_USB_InvalidRequest;
     if ((setup->bmRequestType & 0x1fU)!=1U) return kStatus_USB_InvalidRequest;
     if (setup->bmRequestType & 0x80U)
     {
