@@ -29,6 +29,7 @@ const uint8_t g_ncmCompositeConfiguration[] = {
   7,5, 0x04,2, 64,0,0
 };
 const uint16_t g_ncmCompositeConfigurationLength = sizeof(g_ncmCompositeConfiguration);
+// if changed, check the following works on Android!
 const uint8_t g_ncmMacStringDescriptor[] = {
-  26,3, '0',0,'2',0,'0',0,'0',0,'0',0,'0',0,'0',0,'0',0,'0',0,'0',0,'0',0,'1',0
+  26,3, '0',0,'0',0,'0',0,'4',0,'9',0,'F',0,'0',0,'0',0,'0',0,'0',0,'0',0,'1',0
 };

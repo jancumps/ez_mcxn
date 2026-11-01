@@ -54,12 +54,12 @@ static err_t NCM_LinkOutput(struct netif *netif, struct pbuf *p)
 
 static err_t NCM_NetifInit(struct netif *netif)
 {
-    /* Device MAC address: 02:00:00:00:00:02.
+    /* Device MAC address: 00:04:9f:00:00:02 (if changed, check it works on Android!)
      * Host MAC address assigned via CDC string descriptor 4 is 02:00:00:00:00:01.
      * Distinct MAC addresses are required so host OS (Windows/Linux/macOS) does not
      * drop incoming frames as loopback/reflections of its own interface.
      */
-    static const uint8_t mac[6] = {0x02, 0x00, 0x00, 0x00, 0x00, 0x02};
+    static const uint8_t mac[6] = {0x00, 0x04, 0x9F, 0x00, 0x00, 0x02};
     netif->name[0] = 'u';
     netif->name[1] = 'n';
     netif->hwaddr_len = 6;
