@@ -571,10 +571,11 @@ typedef struct ip4_addr {
 - **Toolchain**: Arm GNU Toolchain (`arm-none-eabi-gcc` in `PATH`).
 - **Build System**: CMake 3.20+ and Ninja.
 - **Flashing Utility**: NXP `blhost` in `PATH`.
-- **lwIP**: In the project folder, type the following to install the lwIP source: 
+- **lwIP**: In the project folder, type the following to install the lwIP source
+  (You may see a message regarding ```You are in 'detached HEAD' state.```, this is OK): 
 ```
 git clone --depth 1 --branch STABLE-2_2_1_RELEASE https://github.com/lwip-tcpip/lwip.git lwip
-``` 
+```
 
 ### Build & Flash
 
