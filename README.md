@@ -20,6 +20,9 @@ The following user vars (environment variables) will need to be created:
 
 `MCUXPRESSO_SDK_ROOT = C:\dev\projects\mcuxpresso-sdk\mcuxsdk`
 
+`MCXN_CUSTOM_BOARD_ROOT = C:\dev\projects\mcx_projects\_boards`
+
+
 # Double Blinky
 
 ## Overview
