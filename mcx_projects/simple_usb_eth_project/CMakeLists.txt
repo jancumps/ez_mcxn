@@ -2,8 +2,10 @@
 cmake_minimum_required(VERSION 3.22)
 project(simple_usb_project LANGUAGES C ASM)
 
-set(MCUX_SDK_ROOT "C:/DEV/projects/mcuxpresso-sdk/mcuxsdk" CACHE PATH "MCUXpresso SDK root")
-set(BOARD_ROOT "C:/DEV/projects/mcx_projects/_boards/ez_mcxn" CACHE PATH "Custom board root")
+# set(MCUX_SDK_ROOT "C:/DEV/projects/mcuxpresso-sdk/mcuxsdk" CACHE PATH "MCUXpresso SDK root")
+# set(BOARD_ROOT "C:/DEV/projects/mcx_projects/_boards/ez_mcxn" CACHE PATH "Custom board root")
+set(MCUX_SDK_ROOT $ENV{MCUXPRESSO_SDK_ROOT})   
+set(BOARD_ROOT "$ENV{MCXN_CUSTOM_BOARD_ROOT}/ez_mcxn")   
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(LWIP_DIR "${CMAKE_CURRENT_SOURCE_DIR}/lwip")
