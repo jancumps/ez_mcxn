@@ -8,6 +8,7 @@ param (
     [string]$Toolchain = "armgcc",
 
     [string]$SdkRoot = $env:MCUXPRESSO_SDK_ROOT,
+    [string]$CustomBoardRoot = $env:MCXN_CUSTOM_BOARD_ROOT,
 
     [string]$UsbId = "0x1FC9,0x0158"
 )
@@ -66,7 +67,6 @@ if ([string]::IsNullOrWhiteSpace($Board)) {
 # ---------------------------------------------------------------------------
 
 $BuildDir = Join-Path $ProjectDir "output"
-$CustomBoardRoot = "C:/DEV/projects/mcx_projects/_boards"
 
 Write-Host ""
 Write-Host "MCUXpresso project build"
