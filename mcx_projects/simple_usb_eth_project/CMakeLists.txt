@@ -8,7 +8,18 @@ set(MCUX_SDK_ROOT $ENV{MCUXPRESSO_SDK_ROOT})
 set(BOARD_ROOT "$ENV{MCXN_CUSTOM_BOARD_ROOT}/ez_mcxn")   
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-set(LWIP_DIR "${CMAKE_CURRENT_SOURCE_DIR}/lwip")
+include(FetchContent)
+set(FETCHCONTENT_UPDATES_DISCONNECTED ON CACHE BOOL "" FORCE) # skip if we have it in cache. Also allows for offline builds
+FetchContent_Declare(lwip
+  GIT_REPOSITORY "https://github.com/lwip-tcpip/lwip.git"
+  GIT_TAG STABLE-2_2_1_RELEASE
+  GIT_SHALLOW 1 # Triggers a shallow clone
+  # prevent makefile execution (if any)
+  SOURCE_SUBDIR =
+)
+FetchContent_MakeAvailable(lwip)
+
+set(LWIP_DIR "${lwip_SOURCE_DIR}")
 include("${LWIP_DIR}/src/Filelists.cmake")
 add_subdirectory(usb_com_eth)
 target_sources(usb_com_eth PRIVATE ${lwipcore_SRCS} ${lwipcore4_SRCS} ${LWIP_DIR}/src/netif/ethernet.c)
